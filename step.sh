@@ -27,7 +27,7 @@ changelog="$(git log --pretty=format:"%s" $lastLMasterTag...$lastLBranchTag)"
 echo "--"
 echo $changelog
 
-$THIS_SCRIPT_DIR/upload.js "${changelog}" "${JIRA_AUTH_USER}" "${JIRA_AUTH_PASSWORD}"
+$THIS_SCRIPT_DIR/transitions.js "${changelog}" "${JIRA_AUTH_USER}" "${JIRA_AUTH_PASSWORD}"
 
 #
 # --- Export Environment Variables for other Steps:
