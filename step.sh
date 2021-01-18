@@ -20,7 +20,7 @@ lastLBranchTag=$(git log --pretty=format:'%h' -n 1)
 #argument=$(git log --no-merges ${BITRISEIO_GIT_BRANCH_DEST}..)
 #argument=$(git log ${BITRISE_GIT_BRANCH} --not $previousTag)
 #argument=$(git log origin/master..origin/test)
-argument2=$(git cherry -v origin/master origin/test)
+argument2=$(git cherry -v origin/${BITRISEIO_GIT_BRANCH_DEST} origin/${BITRISE_GIT_BRANCH})
 
 changelog="$(git log --pretty=format:"%s" $lastLMasterTag...$lastLBranchTag)"
 
