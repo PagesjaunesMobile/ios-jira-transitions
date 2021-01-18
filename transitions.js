@@ -30,7 +30,7 @@ arrayJiras.forEach(function (item, index) {
   requestStatus.addEventListener("load", function() {
 
     console.log("--Transitipns--");
-    console.log(request.responseText);
+    console.log(requestStatus.responseText);
     console.log("--");
 
     const request = new XMLHttpRequest();
@@ -42,9 +42,11 @@ arrayJiras.forEach(function (item, index) {
     request.setRequestHeader("Authorization", "Basic " + base64.encode(user+":"+pwd));
 
     request.addEventListener("load", function() {
+	     console.log("--resultat Transitipns--");
        console.log(request.readyState);
        console.log(request.status);
        console.log(request.responseText);
+	     console.log("--Transitipns--");
       }, false);
 
     request.send(JSON.stringify(params))
