@@ -77,9 +77,9 @@ inputs:
       value_options: []
 
 outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - COMMITS_CHANGELOG:
     opts:
-      title: "Example Step Output"
+      title: "Changelog"
       summary: Summary. No more than 2-3 sentences.
       description: |
         Description of this output.
