@@ -53,5 +53,5 @@ arrayJiras.forEach(function (item, index) {
   });
     }, false);
 	
-
+requestStatus.send()
 
