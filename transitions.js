@@ -19,7 +19,7 @@ arrayJiras.forEach(function (item, index) {
 	var s2 = item.substring(1).replace(/ /g,'');
     console.log(s2);
 	
-	//s2 = "MOBIOS-1703"
+	s2 = "MOBIOS-1703"
 
   const requestStatus = new XMLHttpRequest();
 	
