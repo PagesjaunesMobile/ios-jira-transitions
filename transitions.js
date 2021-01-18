@@ -51,7 +51,7 @@ arrayJiras.forEach(function (item, index) {
 
     request.send(JSON.stringify(params))
   });
+	requestStatus.send()
     }, false);
-	
-requestStatus.send()
+
 
