@@ -72,7 +72,14 @@ inputs:
       is_expand: true
       is_required: true
       is_dont_change_value: true
-      
+  - TAG_DEST: ""
+    opts:
+      title: "last tag used"
+      description: ""
+      summary: ""
+      is_expand: true
+      is_required: true
+      is_dont_change_value: true
 outputs:
   - COMMITS_CHANGELOG:
     opts:
