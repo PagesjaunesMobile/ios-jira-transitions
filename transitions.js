@@ -3,8 +3,9 @@ var XMLHttpRequest = require('xhr2');
 var base64 = require('base-64');
 
 let commits = process.argv[2]; 
-let user = process.argv[3];
-let pwd = process.argv[4];
+let newState = process.argv[3]; 
+let user = process.argv[4];
+let pwd = process.argv[5];
 
 console.log('commits', commits);
 
@@ -32,7 +33,7 @@ arrayJiras.forEach(function (item, index) {
     console.log("--Transitipns--");
     console.log(requestStatus.responseText);
     console.log("--");
-	var tt = data.transitions.filter(x => x.name=="In Review");
+	var tt = data.transitions.filter(x => x.name == newState);
 	console.log(tt[0].id)
     const request = new XMLHttpRequest();
 
