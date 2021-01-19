@@ -19,7 +19,7 @@ arrayJiras.forEach(function (item, index) {
 	var s2 = item.substring(1).replace(/ /g,'');
     console.log(s2);
 	
-	s2 = "MOBIOS-1703"
+	//s2 = "MOBIOS-1703"
 
   const requestStatus = new XMLHttpRequest();
 	
@@ -32,10 +32,11 @@ arrayJiras.forEach(function (item, index) {
     console.log("--Transitipns--");
     console.log(requestStatus.responseText);
     console.log("--");
-
+	var tt = data.transitions.filter(x => x.name=="In Review");
+	console.log(tt[0].id)
     const request = new XMLHttpRequest();
 
-    var params = {"transition":{"id":71}}
+    var params = {"transition":{"id": tt[0].id}}
 
     request.open('POST', 'https://jira.solocal.com/rest/api/2/issue/'+s2+'/transitions?expand=transitions.fields', true)
     request.setRequestHeader("Content-type", "application/json");
