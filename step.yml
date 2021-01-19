@@ -64,14 +64,12 @@ toolkit:
 
 
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - transition_to: "See Jira workflow to check list of available transitions"
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
+      title: "State of the next transition"
+      summary: "Move jira state to new transition"
       description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
+        Can be "Done", "In Review", etc
       is_expand: true
       is_required: true
       value_options: []
