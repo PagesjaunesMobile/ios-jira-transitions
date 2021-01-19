@@ -12,7 +12,7 @@ let arrayJiras = commits.match(/(#.*) /g);
 arrayJiras.forEach(function (item, index) {
   console.log(item, index);
   var jiraTicket = item.substring(1).replace(/ /g,'');
- 
+  console.log(jiraTicket);
 	
   const requestStatus = new XMLHttpRequest();
 	
@@ -21,7 +21,9 @@ arrayJiras.forEach(function (item, index) {
   requestStatus.setRequestHeader("Authorization", "Basic " + base64.encode(user+":"+pwd));
 
   requestStatus.addEventListener("load", function() {
+   console.log(requestStatus.responseText);
    var jsonResponse = JSON.parse(requestStatus.responseText);
+   console.log(jsonResponse);
    var newStateData = jsonResponse.transitions.filter(x => x.name == newState);
 	
     const request = new XMLHttpRequest();
