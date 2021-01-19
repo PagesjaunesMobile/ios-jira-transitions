@@ -11,7 +11,9 @@ let arrayJiras = commits.match(/(#.*) /g);
 
 arrayJiras.forEach(function (item, index) {
   console.log(item, index);
-  var jiraTicket = item.substring(1).replace(/ /g,'');
+	
+  let jiraTicket = item.split('#').pop().split(' ')[0];
+	
   console.log(jiraTicket);
 	
   const requestStatus = new XMLHttpRequest();
