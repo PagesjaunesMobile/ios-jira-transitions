@@ -6,7 +6,13 @@ npm install --prefix $THIS_SCRIPT_DIR xhr2 --save
 npm install --prefix $THIS_SCRIPT_DIR base-64 --save 
 
 
+
 echo "*** Transition Jira START ***"
+
+echo ${BITRISE_GIT_BRANCH}
+echo "-------"
+echo ${BITRISEIO_GIT_BRANCH_DEST}
+echo "-------"
 
 git checkout ${BITRISEIO_GIT_BRANCH_DEST}~1
 lastLMasterTag=$(git log --pretty=format:'%h' -n 1)
