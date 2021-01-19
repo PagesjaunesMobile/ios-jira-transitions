@@ -64,6 +64,12 @@ toolkit:
 
 
 inputs:
+  - CHANGELOG: ""
+    opts:
+      title: "Changelog"
+      is_expand: true
+      is_required: true
+      is_dont_change_value: true
   - TRANSITION_TO: ""
     opts:
       title: "State of the next transition"
