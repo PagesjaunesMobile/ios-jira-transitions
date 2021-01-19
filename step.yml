@@ -72,7 +72,8 @@ inputs:
         Can be "Done", "In Review", etc
       is_expand: true
       is_required: true
-
+      is_dont_change_value: true
+      
 outputs:
   - COMMITS_CHANGELOG:
     opts:
