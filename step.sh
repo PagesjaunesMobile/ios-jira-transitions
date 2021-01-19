@@ -14,6 +14,11 @@ echo "-------"
 echo ${BITRISEIO_GIT_BRANCH_DEST}
 echo "-------"
 
+if [ -z "$BITRISEIO_GIT_BRANCH_DEST" ]; then
+    BITRISEIO_GIT_BRANCH_DEST="develop"
+fi
+  
+
 git checkout ${BITRISEIO_GIT_BRANCH_DEST}~1
 lastLMasterTag=$(git log --pretty=format:'%h' -n 1)
 
