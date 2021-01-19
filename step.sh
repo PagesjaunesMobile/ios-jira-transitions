@@ -5,27 +5,16 @@ THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 npm install --prefix $THIS_SCRIPT_DIR xhr2 --save 
 npm install --prefix $THIS_SCRIPT_DIR base-64 --save 
 
-echo ${BITRISE_GIT_BRANCH}
-echo "*** Transition Jira ***"
-echo ${BITRISEIO_GIT_BRANCH_DEST}
 
-git checkout origin/${BITRISEIO_GIT_BRANCH_DEST}
+echo "*** Transition Jira START ***"
+
+git checkout ${BITRISEIO_GIT_BRANCH_DEST}~1
 lastLMasterTag=$(git log --pretty=format:'%h' -n 1)
-#echo $(lastLMasterTag)
-git checkout origin/${BITRISE_GIT_BRANCH}
-lastLBranchTag=$(git log --pretty=format:'%h' -n 1)
-#echo $(lastLBranchTag)
 
-#previousTag=$(git merge-base origin/${BITRISE_GIT_BRANCH} ${BITRISEIO_GIT_BRANCH_DEST})
-#argument=$(git log --no-merges ${BITRISEIO_GIT_BRANCH_DEST}..)
-#argument=$(git log ${BITRISE_GIT_BRANCH} --not $previousTag)
-#argument=$(git log origin/master..origin/test)
-argument2=$(git cherry -v origin/${BITRISEIO_GIT_BRANCH_DEST} origin/${BITRISE_GIT_BRANCH})
+git checkout ${BITRISE_GIT_BRANCH}
+lastLBranchTag=$(git log --pretty=format:'%h' -n 1)
 
 changelog="$(git log --pretty=format:"%s" $lastLMasterTag...$lastLBranchTag)"
-
-echo "--"
-echo $changelog
 
 $THIS_SCRIPT_DIR/transitions.js "${changelog}" "${TRANSITION_TO}" "${JIRA_AUTH_USER}" "${JIRA_AUTH_PASSWORD}"
 
