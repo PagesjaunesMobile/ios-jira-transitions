@@ -64,12 +64,11 @@ toolkit:
 
 
 inputs:
-  - transition_to: "See Jira workflow to check list of available transitions"
+  - transition_to: ""
     opts:
       title: "State of the next transition"
       summary: "Move jira state to new transition"
-      description: |
-        Can be "Done", "In Review", etc
+      description: See Jira workflow to check list of available transitions
       is_expand: true
       is_required: true
       is_dont_change_value: true
