@@ -33,9 +33,10 @@ arrayJiras.forEach(function (item, index) {
     console.log("--Transitipns--");
     console.log(requestStatus.responseJSON);
     console.log("--");
-	var data = requestStatus.responseJSON
 	
-	var tt = data.transitions.filter(x => x.name == newState);
+	var data=xhr.responseText;
+	var jsonResponse = JSON.parse(data);
+	var tt = jsonResponse.transitions.filter(x => x.name == newState);
 	console.log(tt[0].id)
     const request = new XMLHttpRequest();
 
