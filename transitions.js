@@ -34,7 +34,7 @@ arrayJiras.forEach(function (item, index) {
     console.log(requestStatus.responseJSON);
     console.log("--");
 	
-	var data=xhr.responseText;
+	var data=requestStatus.responseText;
 	var jsonResponse = JSON.parse(data);
 	var tt = jsonResponse.transitions.filter(x => x.name == newState);
 	console.log(tt[0].id)
