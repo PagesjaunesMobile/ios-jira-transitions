@@ -34,7 +34,7 @@ arrayJiras.forEach(function (item, index) {
     console.log(requestStatus.responseJSON);
     console.log("--");
 	var data = requestStatus.responseJSON
-	data2.transitions.filter(x => x.name=="In Review");
+	
 	var tt = data.transitions.filter(x => x.name == newState);
 	console.log(tt[0].id)
     const request = new XMLHttpRequest();
