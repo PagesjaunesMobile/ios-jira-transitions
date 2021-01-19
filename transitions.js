@@ -31,9 +31,10 @@ arrayJiras.forEach(function (item, index) {
   requestStatus.addEventListener("load", function() {
 
     console.log("--Transitipns--");
-    console.log(requestStatus.responseText);
+    console.log(requestStatus.responseJSON);
     console.log("--");
-	var data = requestStatus.responseText
+	var data = requestStatus.responseJSON
+	data2.transitions.filter(x => x.name=="In Review");
 	var tt = data.transitions.filter(x => x.name == newState);
 	console.log(tt[0].id)
     const request = new XMLHttpRequest();
