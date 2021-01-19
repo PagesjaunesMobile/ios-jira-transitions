@@ -15,12 +15,13 @@ echo ${BITRISEIO_GIT_BRANCH_DEST}
 echo "-------"
 
 if [ -z "$BITRISEIO_GIT_BRANCH_DEST" ]; then
-    BITRISEIO_GIT_BRANCH_DEST="develop"
-fi
-  
+   lastLMasterTag=$(git rev-list --parents HEAD | head -1| cut -d' ' -f2)
+   else
+    git checkout ${BITRISEIO_GIT_BRANCH_DEST}~1
+    lastLMasterTag=$(git log --pretty=format:'%h' -n 1)
+fi  
 
-git checkout ${BITRISEIO_GIT_BRANCH_DEST}~1
-lastLMasterTag=$(git log --pretty=format:'%h' -n 1)
+
 
 git checkout ${BITRISE_GIT_BRANCH}
 lastLBranchTag=$(git log --pretty=format:'%h' -n 1)
